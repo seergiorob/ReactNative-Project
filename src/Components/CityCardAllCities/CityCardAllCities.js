@@ -3,9 +3,11 @@ import React from 'react';
 import ciudadesActions from '../../redux/actions/ciudadesActions.js';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-
+import { useNavigation } from '@react-navigation/native';
 
 function CityCardAllCities(props) {
+
+  const navigation = useNavigation()
 
   const {todasCiudades: data, filtro: search, ciudades: dataSearcheada, cargado: isLoaded} = props;
   const {filtrar, fetchearCiudades} = props;
@@ -33,38 +35,11 @@ function CityCardAllCities(props) {
       onChangeText={(text) => handleChange(text)}
       />
       <View style={styles.positionCard}>
-        {/* <TextField
-          
-          style={styles.inputSearch"
-          id="outlined-basic"
-          label="Search Cities"
-          variant="outlined"
-          value={search}
-          onChange={handleChange}
-        /> */}
       
-
-        {/* {
-        !isLoaded ? (<Text>Loading..</Text>) : dataSearcheada.length === 0 ? (<Text>We're Sorry! We can't find any city for your search term. Please try another one.</Text>) : 
-        dataSearcheada?.map((city, index) => 
-        <TouchableOpacity key={index} style={styles.container}
-          onPress={() => props.navigation.navigate('City', {
-            id:city._id
-          })}>
-            <Image source={{ uri: `https://mytineraryrob.herokuapp.com/img/${city.image}`}} style={styles.image}/>
-            <Text style={styles.text}> {city.name} </Text>
-          
-        </TouchableOpacity>
-
-        )} */}
 
 
         <View style={styles.positionCardCards}>
-          
-          {/* {
-          !isLoaded ? (<Text>Loading..</Text>) :
-          dataSearcheada.length === 0 ? (<Text>We're Sorry! We can't find any city for your search term. Please try another one.</Text>) :
-          dataSearcheada?.map((city) =>  */}
+
           {
           !isLoaded ? (<Text>Loading..</Text>) : dataSearcheada.length === 0 ? (<Text>We're Sorry! We can't find any city for your search term. Please try another one.</Text>) : 
         dataSearcheada?.map((city, index) => 
@@ -94,10 +69,11 @@ function CityCardAllCities(props) {
                 {city.description}
               </Text>
               <View style={styles.btnCardCities}> 
-              <Button style={styles.btnCardC} title={'MORE INFORMATION'} >
-                {/* <LinkRouter to={`Details/${city._id}`}> */}
-                  
-                  {/* </LinkRouter> */}
+              <Button style={styles.btnCardC} 
+              title={'MORE INFORMATION'} 
+              onPress={()=>props.navigation.navigate('Details', {id:city._id
+                    })}>
+                
                   </Button>
               </View>
             </View>
@@ -126,44 +102,11 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(CityCardAllCities)
 
-
-// const styles = StyleSheet.create({
-//   container: {
-//       position: "relative",
-//       width: "100%",
-//       height: 300,
-//       marginBottom: 10,
-
-//   },
-//   image: {
-//       width: "100%",
-//       height: "100%",
-
-//   },
-//   text: {
-//       width: "100%",
-//       color: "white",
-//       fontSize: 20,
-//       lineHeight: 84,
-//       fontWeight: "bold",
-//       textAlign: "center",
-//       backgroundColor: "#000000c0",
-//       zIndex: 10,
-//       position: "absolute",
-//       top: "40%"
-//   },
-//   inputSearch:{
-//     marginTop: 10,
-//     marginBottom: 10,
-//     fontSize: 25,
-//     textAlign: 'center',
-//     height: 50,
-//     color: "black",
-//     backgroundColor: "white",
-//   }
-// });
-
 const styles = StyleSheet.create({
+    cardwrapperCity: {
+    backgroundColor: 'whitesmoke',
+    },
+
     cardbodyCity: {
         position: 'relative',
         width: 350,
@@ -174,7 +117,6 @@ const styles = StyleSheet.create({
         shadowColor: 'black',
         shadowOffset: { width: 3, height: 5 },
         shadowRadius: 10,
-        borderWidth: 1,
     },
     imgcardBody: {
         width: 350,

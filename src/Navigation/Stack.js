@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import City from '../Screens/City.js';
 import Details from '../Screens/Details.js';
 import Comments from '../Screens/Comments.js';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 
-export default function createStackNavigator() {
+export default function MyStack() {
 
   return (
 
@@ -15,10 +15,8 @@ export default function createStackNavigator() {
     screenOptions={{ headerBackTitle: 'Black' }}
     >
       <Stack.Screen name="City" component={City} />
-      <Stack.Screen name="Details" component={Details} options={({ navigation, route }) => ({headerTitle: 'Details'
-    })} />
-      <Stack.Screen name="Comments" component={Comments} options={({ navigation, route }) => ({headerTitle: 'Comments'
-    })} />
+      <Stack.Screen name="Details" component={Details} />
+      
     </Stack.Navigator>
   );
 }

@@ -7,6 +7,8 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import mainReducer from './src/redux/reducers/mainReducer.js'
 import DrawerNavigator from './src/Navigation/Drawer'
+import UserTabNavigation from './src/Navigation/Tabs.js';
+
 
 export default function App() {
 
@@ -17,7 +19,8 @@ export default function App() {
     // <View style={styles.container}>
       <Provider store={reduxStore}>
         <NavigationContainer>
-            <DrawerNavigator />      
+            {/* <DrawerNavigator /> */}
+            <UserTabNavigation/>
       {/* <Home/> */}
       {/* <StatusBar style="auto" /> */}
         </NavigationContainer>

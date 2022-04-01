@@ -1,21 +1,26 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 
 function UsHome() {
   return (
     <View style={styles.homeUsWrapper}>
         <Text style={styles.textHomeUsTitle}>Why people choose us?</Text>
         <View>
+        <MaterialCommunityIcons style={styles.usIcon}  name="account-voice" size={24} color="black" />
             <Text style={styles.textHomeUsBlack}>Guidance</Text>
             <Text style={styles.textHomeUs}>Expert insight and travel knowledge.</Text>
         </View>
 
         <View>
+        <MaterialCommunityIcons style={styles.usIcon} name="check-decagram" size={24} color="black" />
             <Text style={styles.textHomeUsBlack}>Value</Text>
             <Text style={styles.textHomeUs}>Irresistible rates, offers and benefits.</Text>
         </View>
 
         <View>
+        <MaterialCommunityIcons style={styles.usIcon} name="spa" size={24} color="black" />
             <Text style={styles.textHomeUsBlack}>Peace of Mind</Text>
             <Text style={styles.textHomeUs}>Book with confidence.</Text>
         </View>
@@ -57,6 +62,10 @@ const styles = StyleSheet.create({
         color: 'black',
         textAlign: 'center',
         fontWeight: 'bold',
+    },
+    usIcon: {
+      fontSize: 44,
+      textAlign: 'center',
     }
     
   });

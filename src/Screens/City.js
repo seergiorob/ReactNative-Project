@@ -4,12 +4,12 @@ import CityHeroAllCities from '../Components/CityHeroAllCities/CityHeroAllCities
 import CityCardAllCities from '../Components/CityCardAllCities/CityCardAllCities.js'
 
 
-function City() {
+function City({navigation}) {
   return (
     <ScrollView style={styles.cityWrapper}>
         <CityHeroAllCities/> 
 
-        <CityCardAllCities/>
+        <CityCardAllCities navigation={navigation}/>
     
     </ScrollView>
   )

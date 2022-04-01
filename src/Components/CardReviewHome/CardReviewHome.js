@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import comments from '../../../assets/datoscoment'
-import { FaBeer } from 'react-icons/fa';
+import { FontAwesome } from '@expo/vector-icons';
 
 let commentsArray = [];
 
@@ -29,7 +29,7 @@ export default function CardReviewHome() {
                 
                 <View style={styles.cardtext}>
                 <Text style={styles.cardtexth3} >{user.name}</Text>
-                {/* <Text style={styles.stars}>{user.rate}<FaBeer/> </Text> */}
+                <Text style={styles.stars}>{user.rate}<FontAwesome name="star" size={24} color="orange" /> </Text>
                 <Text style={styles.reviewcardp}>"{user.comment}"</Text>
                 </View>
             </View>
@@ -44,6 +44,7 @@ export default function CardReviewHome() {
 const styles = StyleSheet.create({
     generalcard: {
         backgroundColor: 'whitesmoke',
+        marginBottom: 40,
     },
     cardwrapper1: {
         flexDirection: 'row',
@@ -104,7 +105,12 @@ const styles = StyleSheet.create({
         left: 95,
     },
     stars: {
-        color: 'yellow'
+        color: 'black',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        margin: 8,
+        marginBottom: 14,
     },
 
 
