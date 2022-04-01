@@ -26,6 +26,7 @@ function UsHome() {
         </View>
 
         <View>
+        <MaterialCommunityIcons style={styles.usIcon} name="account-group" size={24} color="black" />
             <Text style={styles.textHomeUsBlack}>Service</Text>
             <Text style={styles.textHomeUs}>Beside you every step of the way.</Text>
         </View>
