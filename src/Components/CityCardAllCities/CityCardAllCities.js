@@ -48,7 +48,7 @@ function CityCardAllCities(props) {
             <View style={styles.cardbodyCity} key={city.name}>
               {city.travelers < 4000 ? <Text> </Text> : (
               <View style={styles.badgeCardCity}> 
-              <Text>TOP DESTINATION</Text>
+              <Text style={styles.textBadge} >TOP DESTINATION</Text>
               </View>)}
               <Image
                 style={styles.imgcardBody}
@@ -177,6 +177,11 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 16,
         borderBottomRightRadius: 0,
         zIndex: 10,
+    },
+    textBadge: {
+      color: 'white',
+      textAlign: 'center',
+      fontWeight: 'bold',
     },
       inputSearch:{
         marginTop: 10,
