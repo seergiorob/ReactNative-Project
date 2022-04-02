@@ -7,16 +7,20 @@ import Comments from '../Screens/Comments.js';
 const Stack = createNativeStackNavigator();
 
 
-export default function MyStack() {
+export default function PlaceStackNavigation() {
 
   return (
 
-    <Stack.Navigator initialRouteName="City"
+    <Stack.Navigator initialRouteName="Cities"
     screenOptions={{ headerBackTitle: 'Black' }}
     >
-      <Stack.Screen name="City" component={City} />
+      <Stack.Screen name="Cities" component={City} 
+      options={{ headerShown: false, }}
+      />
       <Stack.Screen name="Details" component={Details} />
-      
+      {/* <Stack.Screen name="Comments" component={CommentsScreen} options={({ navigation, route }) => ({
+                headerTitle: "Comments"
+            })} /> */}
     </Stack.Navigator>
   );
 }

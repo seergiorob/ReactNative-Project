@@ -1,11 +1,15 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, ScrollView, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, ImageBackground, Button } from 'react-native';
 
-function HeroHome() {
+function HeroHome({ navigation }) {
   return (
     <View style={styles.heroHome}>
         <ImageBackground source={require('../../../assets/img/herotest.jpg')} resizeMode="cover" style={styles.image}>
         <Text style={styles.textHome}>Find your perfect trip, designed by insiders who know and love their cities!</Text>
+        <Button
+        onPress={() => navigation.navigate('Cities')}
+        title="Go to Cities"
+      />
         </ImageBackground>
     </View>
   )

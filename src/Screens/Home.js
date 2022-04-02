@@ -7,10 +7,10 @@ import Contact from '../Components/Contact/Contact.js'
 import CardReviewHome from '../Components/CardReviewHome/CardReviewHome.js'
 
 
-function Home() {
+function Home({ navigation }) {
   return (
     <ScrollView style={styles.homeWrapper}>
-        <HeroHome/>
+        <HeroHome navigation={navigation} />
         <UsHome/>
         {/* <CarouselHome/> */}
         {/* <Contact/> */}
