@@ -6,11 +6,12 @@ import { connect } from 'react-redux';
 import ciudadesActions from '../redux/actions/ciudadesActions.js';
 import itineraryActions from '../redux/actions/itineraryActions.js';
 import { MaterialIcons } from '@expo/vector-icons';
+import CityItineraries from '../Components/CityItineraries/CityItineraries.js';
 
 function Details(props) {
 
     const id = props.route.params.id
-    console.log("🚀 ~ file: Details.js ~ line 12 ~ Details ~ props.route.id", props.route.params.id)
+    
 
     const {todasCiudades: data, cargando:isLoaded, ciudad: city} = props
 
@@ -20,7 +21,7 @@ function Details(props) {
         props.fetchearItinerarioPorCiudad(id)
     },[id])
 
-    console.log(city)
+    console.log(props.itinerariosPorCiudad)
 
     return(
         
@@ -76,13 +77,14 @@ function Details(props) {
         </View>
       </View>
 
-      {/* {props.itinerariosPorCiudad == null ? (<Text>We're Sorry! We can't find any City there..</Text>) : 
+      {
+       props.itinerariosPorCiudad == null ? (<Text>We're Sorry! We can't find any City there..</Text>) : 
+
       props.itinerariosPorCiudad.length === 0 ? (<Text style="styles.itineraryNotFound">We're Sorry! We can't find any Itineraries for your City.</Text>) : 
       props.itinerariosPorCiudad.map((itinerary, index) => {
         return (
-         
-        <ControlledAccordions itinerary={itinerary} index={index} key={itinerary._id} />
-       )})}  */}
+         <CityItineraries itinerary={itinerary} index={index} key={itinerary._id} />
+       )})} 
         
         </ScrollView>
         
