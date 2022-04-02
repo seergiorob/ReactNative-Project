@@ -42,7 +42,7 @@ function Details(props) {
               />
               <Image
                 style={styles.flagCardCityDetails}
-                source={{ uri: `https://mytineraryrob.herokuapp.com/img/${city.flag}`}}
+                source={{ uri: `https://mytineraryrob.herokuapp.com/img/flags/${city.flag}`}}
               />
             <Text style={styles.h1tittleheroDetails} >{city.name}</Text>
               <View style={styles.cardtextCityDetails}>
@@ -123,7 +123,39 @@ const styles = StyleSheet.create({
             marginTop: -50,
         },
         h1tittleheroDetails:{
-            
+            backgroundColor: 'black',
+            color: 'white',
+            fontSize: 30,
+            textAlign: 'left',
+            width: '100%',
+            padding: 8,
+            paddingLeft: 26,
+        },
+        cardtextCityDetails:{
+            width: '100%',
+            margin: 'auto',
+            paddingLeft: 26,
+            marginTop: 10,
+            color: 'black',
+        },
+        reviewcardCityDetails:{
+            width: '90%',
+            margin: 20,
+            fontSize: 20,
+        },
+        positionCardCardsDetails:{
+            position: 'relative',
+        },
+        flagCardCityDetails:{
+            position: 'absolute',
+            borderWidth: 3,
+            borderColor: 'white',
+            borderRadius:360,
+            width: 100,
+            height: 100,
+            top: 326,
+            right: 40,
+            zIndex: 10,
         },
     
   });
