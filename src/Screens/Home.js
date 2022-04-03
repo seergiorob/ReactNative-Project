@@ -12,7 +12,7 @@ function Home({ navigation }) {
     <ScrollView style={styles.homeWrapper}>
         <HeroHome navigation={navigation} />
         <UsHome/>
-        {/* <CarouselHome/> */}
+        <CarouselHome/>
         {/* <Contact/> */}
         <CardReviewHome/>
        

@@ -4,6 +4,7 @@ import ciudadesActions from '../../redux/actions/ciudadesActions.js';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 function CityCardAllCities(props) {
 
@@ -25,7 +26,7 @@ function CityCardAllCities(props) {
 
 
   return (
-    <View style={styles.cardwrapperCity}>
+    <KeyboardAwareScrollView style={styles.cardwrapperCity}>
 
 <TextInput
       style={styles.inputSearch}
@@ -80,7 +81,7 @@ function CityCardAllCities(props) {
           ))}
         </View>
       </View>
-    </View>
+    </KeyboardAwareScrollView>
   )
 }
 
