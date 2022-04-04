@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import City from '../Screens/City.js';
 import Details from '../Screens/Details.js';
-import Comments from '../Screens/Comments.js';
+import CommentScreen from '../Screens/CommentScreen.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,9 +18,7 @@ export default function PlaceStackNavigation() {
       options={{ headerShown: false, }}
       />
       <Stack.Screen name="Details" component={Details} />
-      {/* <Stack.Screen name="Comments" component={CommentsScreen} options={({ navigation, route }) => ({
-                headerTitle: "Comments"
-            })} /> */}
+      <Stack.Screen name="Comments" component={CommentScreen} />
     </Stack.Navigator>
   );
 }

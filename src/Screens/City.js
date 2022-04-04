@@ -47,7 +47,7 @@ function City(props) {
           {
           !isLoaded ? (<Text>Loading..</Text>) : dataSearcheada.length === 0 ? (<Text>We're Sorry! We can't find any city for your search term. Please try another one.</Text>) : 
         dataSearcheada?.map((city, index) => 
-
+//usar FlatList
           (
             <View style={styles.cardbodyCity} key={city.name}>
               {city.travelers < 4000 ? <Text> </Text> : (

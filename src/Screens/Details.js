@@ -21,7 +21,6 @@ function Details(props) {
         props.fetchearItinerarioPorCiudad(id)
     },[id])
 
-    console.log(props.itinerariosPorCiudad)
 
     return(
         
@@ -82,6 +81,7 @@ function Details(props) {
 
       props.itinerariosPorCiudad.length === 0 ? (<Text style="styles.itineraryNotFound">We're Sorry! We can't find any Itineraries for your City.</Text>) : 
       props.itinerariosPorCiudad.map((itinerary, index) => {
+        //FlatList
         return (
          <CityItineraries itinerary={itinerary} index={index} key={itinerary._id} />
        )})} 

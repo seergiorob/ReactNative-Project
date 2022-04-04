@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
-
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,9 +16,10 @@ function UserTabNavigation() {
 
         <Tab.Navigator initialRouteName="SignIn"
         screenOptions={{
-            "tabBarShowLabel": false,
+            "tabBarShowLabel": true,
             "tabBarStyle": [
                 {
+                padding: 20,
                 position: "absolute",
                 bottom: 25,
                 right: 20,
@@ -42,14 +43,14 @@ function UserTabNavigation() {
         <Tab.Screen name="SignIn" component={SignInScreen}
         options={{
             tabBarIcon: ({color, size}) => (
-                <FontAwesome name="plane" size={24} color="black" />)
+                <MaterialCommunityIcons name="account-circle" size={40} color="black" />)
         }}
         />
 
         <Tab.Screen name="SignUp" component={SignUpScreen}
         options={{
             tabBarIcon: ({color, size}) => (
-                <FontAwesome name="plane" size={24} color="black" />)
+                <MaterialCommunityIcons name="account-edit" size={40} color="black" />)
         }}
         />
 
